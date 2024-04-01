@@ -1,0 +1,19 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/vehicle_db
+    username: root
+    password: Sandy@2323
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        hbm2ddl.auto: create-drop
+        show_sql: true # Set to true to enable SQL logging for debugging purposes
+
+  application:
+    name: ems
+
+
+
