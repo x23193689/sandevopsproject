@@ -12,8 +12,6 @@ parserOptions:
   ecmaVersion: 2021
 
 rules:
-  # Add your ESLint rules here
-  # For example:
   semi: error
   quotes: [error, single]
 
