@@ -1,26 +1,45 @@
-version: 0.2
+root: true
 
-phases:
-  install:
-    runtime-versions:
-      python: 3.11
+env:
+  browser: true
+  node: true
+  es6: true
 
-  build:
-    commands:
-      - pip install --upgrade pip
-      - pip install -r requirements.txt
-      - pip install pylint
-      - echo "Build started on `date`"
-      - echo "Compiling the code"
-      - echo "$CODEBUILD_SRC_DIR"
+extends: 
+  - eslint:recommended
 
-  post_build:
-    commands:
-      - python --version
-      - pylint $CODEBUILD_SRC_DIR/*.py
-      - echo "$CODEBUILD_SRC_DIR"
-      - pylint $CODEBUILD_SRC_DIR/sandevopsproject/*.py
+parserOptions:
+  ecmaVersion: 2021
 
-artifacts:
-  files:
-    - '**/*'
+rules:
+  # Add your ESLint rules here
+  # For example:
+  semi: error
+  quotes: [error, single]
+
+# version: 0.2
+
+# phases:
+#   install:
+#     runtime-versions:
+#       python: 3.11
+
+#   build:
+#     commands:
+#       - pip install --upgrade pip
+#       - pip install -r requirements.txt
+#       - pip install pylint
+#       - echo "Build started on `date`"
+#       - echo "Compiling the code"
+#       - echo "$CODEBUILD_SRC_DIR"
+
+#   post_build:
+#     commands:
+#       - python --version
+#       - pylint $CODEBUILD_SRC_DIR/*.py
+#       - echo "$CODEBUILD_SRC_DIR"
+#       - pylint $CODEBUILD_SRC_DIR/sandevopsproject/*.py
+
+# artifacts:
+#   files:
+#     - '**/*'
