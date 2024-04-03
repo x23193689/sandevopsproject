@@ -8,7 +8,8 @@ phases:
       - npm install -g eslint
   pre_build:
     commands:
-      - eslint .
+      - eslint . --ext .js
+
 
 # version: 0.2
 
