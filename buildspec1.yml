@@ -3,12 +3,17 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      java: openjdk11
     commands:
-      - pip install bandit
+      - curl -O https://downloads.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.zip
+      - unzip findbugs-3.0.1.zip
   pre_build:
     commands:
-      - bandit -r .
+      - export FINDBUGS_HOME=$PWD/findbugs-3.0.1
+  build:
+    commands:
+      - java -jar $FINDBUGS_HOME/lib/findbugs.jar -textui <path_to_your_java_classes_directory>
+
 
 
 
