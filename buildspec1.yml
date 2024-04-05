@@ -8,7 +8,7 @@ phases:
       - npm install -g eslint
   pre_build:
     commands:
-      - eslint ./**/*.js
+      - bandit ./**/*.
 
 
 
