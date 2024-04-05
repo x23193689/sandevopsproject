@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: openjdk11
+      java: corretto17
     commands:
       - curl -O https://downloads.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.zip
       - unzip findbugs-3.0.1.zip
@@ -13,6 +13,7 @@ phases:
   build:
     commands:
       - java -jar $FINDBUGS_HOME/lib/findbugs.jar -textui <path_to_your_java_classes_directory>
+
 
 
 
