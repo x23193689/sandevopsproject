@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
-      - curl -O https://downloads.sourceforge.net/project/findbugs/findbugs/3.0.1/findbugs-3.0.1.zip
+      - wget https://sourceforge.net/projects/findbugs/files/findbugs/3.0.1/findbugs-3.0.1.zip/download -O findbugs-3.0.1.zip
       - unzip findbugs-3.0.1.zip
   pre_build:
     commands:
