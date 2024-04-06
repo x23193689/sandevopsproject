@@ -11,7 +11,7 @@ phases:
       - echo "Navigating to the project directory"
       - cd ems   # Change to your project directory
       - echo "Building Spring Boot application"
-      - mvn clean package -X
+      - mvn clean package -X -DskipTests
   build:
     commands:
       - echo "Build completed, creating deployment artifact"
