@@ -12,14 +12,7 @@ phases:
       - cd ems   # Change to your project directory
       - echo "Building Spring Boot application"
       - mvn clean package -X -DskipTests
-  build:
-    commands:
-      - echo "Build completed, creating deployment artifact"
-      - mv ems/target/*.jar app.jar  # Adjust the path to your JAR file accordingly
-  post_build:
-    commands:
-      - echo "Post build tasks"
 artifacts:
   files:
-    - app.jar
+    - target/ems-0.0.1-SNAPSHOT.jar
 
