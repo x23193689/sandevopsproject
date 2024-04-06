@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo "Building Spring Boot application"
-      - mvn clean package
+      - mvn clean package -X
   build:
     commands:
       - echo "Build completed, creating deployment artifact"
