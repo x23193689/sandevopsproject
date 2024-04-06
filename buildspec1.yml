@@ -8,15 +8,18 @@ phases:
       - apt-get install -y maven
   pre_build:
     commands:
+      - echo "Navigating to the project directory"
+      - cd ems/src   # Change to your project directory
       - echo "Building Spring Boot application"
       - mvn clean package -X
   build:
     commands:
       - echo "Build completed, creating deployment artifact"
-      - mv target/*.jar app.jar
+      - mv ems/src/target/*.jar app.jar  # Adjust the path to your JAR file accordingly
   post_build:
     commands:
       - echo "Post build tasks"
 artifacts:
   files:
     - app.jar
+
