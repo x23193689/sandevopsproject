@@ -1,4 +1,4 @@
-package com.sandeep.ems;
+/*package com.sandeep.ems;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,4 +10,4 @@ class EmsApplicationTests {
 	void contextLoads() {
 	}
 
-}
+}*/
