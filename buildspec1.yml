@@ -4,8 +4,8 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - sudo apt-get update
-      - sudo apt-get install -y maven
+      - apt-get update
+      - apt-get install -y maven
   pre_build:
     commands:
       - echo "Navigating to the project directory"
