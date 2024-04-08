@@ -27,3 +27,22 @@ phases:
 artifacts:
   files:
     - '**/*'
+
+
+    version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      - apt-get update
+      - apt-get install -y maven
+  pre_build:
+    commands:
+      - echo "Navigating to the project directory"
+      - cd ems   # Change to your project directory
+      - echo "Building Spring Boot application"
+      - mvn clean package -X -DskipTests
+artifacts:
+  files:
+    - target/ems-0.0.1-SNAPSHOT.jar
