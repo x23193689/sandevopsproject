@@ -4,8 +4,11 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - apt-get update
-      - apt-get install -y maven
+      - |
+        sudo apt-get update && sudo apt-get install -y curl
+        curl -LO https://downloads.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
+        tar -xf apache-maven-3.8.4-bin.tar.gz
+        export PATH=$PATH:/path/to/apache-maven-3.8.4/bin
   pre_build:
     commands:
       - echo "Navigating to the project directory"
@@ -15,5 +18,3 @@ phases:
 artifacts:
   files:
     - target/ems-0.0.1-SNAPSHOT.jar
-
-
